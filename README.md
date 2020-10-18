@@ -2,7 +2,7 @@
 
 GitHub repository for the coding portion of homework assignments for AMATH 584: Applied Linear Algebra and Numerical Analysis, Fall 2020, with Prof. Kutz. 
 
-#### Assignments:
+## Assignments:
 
 **Homework 2**: Wednesday, October 21, 2020
 
