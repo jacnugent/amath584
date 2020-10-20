@@ -1,7 +1,7 @@
 name: amath
 channels:
-  - anaconda
   - conda-forge
+  - anaconda
   - defaults
 dependencies:
   - _anaconda_depends=2020.07=py38_0
@@ -194,7 +194,7 @@ dependencies:
   - pep8=1.7.1=py38_0
   - pexpect=4.8.0=py38_1
   - pickleshare=0.7.5=py38_1001
-  - pillow=7.2.0=py38ha54b6ba_0
+  - pillow=8.0.0=py38h1a82f1a_0
   - pip=20.2.3=py38_0
   - pkginfo=1.5.0.1=py38_0
   - pluggy=0.13.1=py38_0
