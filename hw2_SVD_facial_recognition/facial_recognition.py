@@ -750,9 +750,3 @@ if SAVE:
     plt.savefig(save_dir + 'cropped_vs_uncropped_singular_values-{c}_{uc}_modes.png'.format(c=nmode_c, uc=nmode_uc),
                 dpi=300, bbox_inches='tight')
 plt.show()
-
-
-
-
-
-
