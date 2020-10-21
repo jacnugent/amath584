@@ -5,8 +5,6 @@ Python code for Homework 2, AMATH 584, Fall 2020
 
 Author: Jacqueline Nugent 
 Last Modified: October 21, 2020
-
-GitHub Repository: https://github.com/jacnugent/amath584
 """
 import cv2 
 import math
@@ -451,7 +449,7 @@ for t in n_modes_uc:
                                                                          b=(pct_uc >= threshold)))
 
 # the output tells us that 111 modes are necessary:
-nmode_c = 111            
+nmode_uc = 111            
 
 
 """
