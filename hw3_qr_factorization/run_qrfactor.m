@@ -1,6 +1,14 @@
+%%
+% run_qrfactor.m
+% 
+% Homework 3, AMATH 584, Fall 2020
+% Author: Jacqueline Nugent
+% Last Modified: November 2, 2020
+%
 % NOTE: first load in the four matrices from file
 % random_matrices.mat
 % they are ordered as square, overdet, overdet, ill-cond
+%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % run the script qrfactor.m

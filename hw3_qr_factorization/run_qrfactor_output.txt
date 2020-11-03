@@ -1,0 +1,21 @@
+>> run_qrfactor
+Q and R are the correct size
+Q is orthonormal
+norm of A-QR: 1.701e-14
+condition number of QR: 725.3675
+
+Q and R are the correct size
+Q is orthonormal
+norm of A-QR: 4.9075e-15
+condition number of QR: 1.9369
+
+Q and R are the correct size
+Q is orthonormal
+norm of A-QR: 1.9432e-14
+condition number of QR: 1.177
+
+Q and R are the correct size
+Q is orthonormal
+norm of A-QR: 8.3279e-15
+condition number of QR: 5224590399612221
+>> 
