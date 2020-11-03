@@ -266,7 +266,7 @@ for i in range(len(ms)):
     for j in range(len(ns)):
         m = ms[i]
         n = ns[j]
-        if m == n:
+        if m == n  or m < n:
             cs[i, j] = np.nan
         else:
             cs[i, j] = condition_num(m, n)
@@ -281,7 +281,7 @@ fig, ax = plt.subplots(figsize=(7, 7))
 pcm = ax.pcolormesh(ns, ms, cs, cmap='PuBuGn', norm=colors.LogNorm()) 
 cb = fig.colorbar(pcm, ax=ax)
 cb.ax.tick_params(labelsize=fsize)
-pcm.set_clim((1, 1e4))
+pcm.set_clim((1, 1e3))
 
 ax.set_ylim((0, 200))
 ax.set_xlim((0, 100))
