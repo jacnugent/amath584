@@ -1,0 +1,127 @@
+Matrix of size (70, 70) with cond(A) = 725.4
+Matrix of size (70, 10) with cond(A) = 1.9
+Matrix of size (700, 10) with cond(A) = 1.2
+Matrix of size (70, 11) with cond(A) = 1.084703e+16
+modified Gram-Schmidt:
+
+Q is the correct size and R is the correct size
+condition number of QR: 725.3674926820456
+norm of A - QR: 2.2486186702681407e-14
+Q is orthonormal
+
+
+Q is the correct size and R is the correct size
+condition number of QR: 1.9369494416599953
+norm of A - QR: 5.472146731896302e-15
+Q is orthonormal
+
+
+Q is the correct size and R is the correct size
+condition number of QR: 1.1769691871084451
+norm of A - QR: 2.540116101504451e-14
+Q is orthonormal
+
+
+Q is the correct size and R is the correct size
+condition number of QR: 8561609965495287.0
+norm of A - QR: 7.033605970410554e-15
+Q is NOT orthonormal: the product Q^T * Q =/= I
+
+
+Python's QR algorithm:
+Q is the correct size and R is the correct size
+norm of A - QR: 4.169770609263206e-14
+condition number of QR: 725.3674926820415
+Q is orthonormal
+
+
+Q is the correct size and R is the correct size
+norm of A - QR: 5.700047459546127e-15
+condition number of QR: 1.936949441659995
+Q is orthonormal
+
+
+Q is the correct size and R is the correct size
+norm of A - QR: 2.1007884196913114e-14
+condition number of QR: 1.1769691871084456
+Q is orthonormal
+
+
+Q is the correct size and R is the correct size
+norm of A - QR: 6.236738623734889e-15
+condition number of QR: 9496225280664346.0
+Q is orthonormal
+
+
+Original size: (2, 1)
+Appended size: (2, 2)
+Condition number: 3.2831059858282296e+16
+Determinant: 0.0
+
+
+Original size: (5, 4)
+Appended size: (5, 5)
+Condition number: 4.986846907359088e+16
+Determinant: 0.0
+
+
+Original size: (10, 9)
+Appended size: (10, 10)
+Condition number: 1.9828076556146838e+17
+Determinant: 0.0
+
+
+Original size: (15, 14)
+Appended size: (15, 15)
+Condition number: 3.096061047333356e+16
+Determinant: 0.0
+
+
+Original size: (20, 19)
+Appended size: (20, 20)
+Condition number: 4.1462465437610856e+16
+Determinant: 1.2607035663262263e-08
+
+
+Original size: (25, 24)
+Appended size: (25, 25)
+Condition number: 1.1291697228690766e+17
+Determinant: 2.840310106880848e-06
+
+
+random 40x10 matrix: 
+
+epsilon = 1e-16:
+    2.8 --> 2.754855542019553e+16
+epsilon = 1e-15:
+    2.4 --> 2757011547238371.0
+epsilon = 1e-14:
+    2.5 --> 244772081496177.5
+epsilon = 1e-13:
+    3.1 --> 27576415855134.4
+epsilon = 1e-12:
+    2.6 --> 2206811798046.4
+epsilon = 1e-11:
+    2.4 --> 239489942902.8
+epsilon = 1e-10:
+    2.7 --> 22666292502.4
+epsilon = 1e-09:
+    2.3 --> 1841758611.1
+epsilon = 1e-08:
+    2.5 --> 280737686.3
+epsilon = 1e-07:
+    2.4 --> 34214946.6
+epsilon = 1e-06:
+    2.4 --> 3197284.0
+epsilon = 1e-05:
+    2.3 --> 259063.7
+epsilon = 0.0001:
+    2.7 --> 25908.6
+epsilon = 0.001:
+    2.6 --> 2351.3
+epsilon = 0.01:
+    2.2 --> 237.7
+epsilon = 0.1:
+    2.7 --> 23.4
+epsilon = 1.0:
+    2.4 --> 4.4
