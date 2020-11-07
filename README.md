@@ -8,4 +8,6 @@ GitHub repository for the coding portion of homework assignments for AMATH 584: 
 
 * **Homework 3** (Monday, November 2, 2020): `hw3_qr_factorization/`
 
+* **Midterm** (Friday, November 6, 2020): `midterm/`
+
  
