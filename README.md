@@ -10,4 +10,6 @@ GitHub repository for the coding portion of homework assignments for AMATH 584: 
 
 * **Midterm** (Friday, November 6, 2020): `midterm/`
 
+* **Homework 5** (Monday, December 7, 2020): `hw3_iterative_methods/`
+
  
