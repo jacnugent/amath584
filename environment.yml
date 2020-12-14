@@ -1,7 +1,7 @@
 name: amath
 channels:
-  - conda-forge
   - anaconda
+  - conda-forge
   - defaults
 dependencies:
   - _anaconda_depends=2020.07=py38_0
@@ -36,8 +36,8 @@ dependencies:
   - bottleneck=1.3.2=py38hf1fa96c_1
   - brotlipy=0.7.0=py38haf1e3a3_1000
   - bzip2=1.0.8=h1de35cc_0
-  - ca-certificates=2020.10.14=0
-  - certifi=2020.6.20=py38_0
+  - ca-certificates=2020.12.5=h033912b_0
+  - certifi=2020.12.5=py38h50d1736_0
   - cffi=1.14.3=py38hed5b41f_0
   - cftime=1.2.1=py38hf1fa96c_0
   - chardet=3.0.4=py38_1003
@@ -178,7 +178,7 @@ dependencies:
   - numpydoc=1.1.0=py_0
   - olefile=0.46=py_0
   - openpyxl=3.0.5=py_0
-  - openssl=1.1.1h=haf1e3a3_0
+  - openssl=1.1.1i=h35c211d_0
   - packaging=20.4=py_0
   - pandas=1.0.5=py38h959d312_0
   - pandoc=2.10.1=0
@@ -195,7 +195,6 @@ dependencies:
   - pexpect=4.8.0=py38_1
   - pickleshare=0.7.5=py38_1001
   - pillow=8.0.0=py38h1a82f1a_0
-  - pip=20.2.3=py38_0
   - pkginfo=1.5.0.1=py38_0
   - pluggy=0.13.1=py38_0
   - ply=3.11=py38_0
@@ -269,13 +268,14 @@ dependencies:
   - sphinxcontrib-qthelp=1.0.3=py_0
   - sphinxcontrib-serializinghtml=1.1.4=py_0
   - sphinxcontrib-websupport=1.2.4=py_0
-  - spyder=4.1.5=py38_0
+  - spyder=4.1.5=py38h32f6830_0
   - spyder-kernels=1.9.4=py38_0
   - sqlalchemy=1.3.19=py38haf1e3a3_0
   - sqlite=3.33.0=hffcf06c_0
   - statsmodels=0.11.1=py38haf1e3a3_0
   - suitesparse=5.2.0=h7413580_0
   - sympy=1.6.2=py38_0
+  - tabulate=0.8.7=pyh9f0ad1d_0
   - tbb=2020.3=h879752b_0
   - tblib=1.7.0=py_0
   - terminado=0.9.1=py38_0
@@ -318,4 +318,7 @@ dependencies:
   - zstd=1.4.5=h41d2c2f_0
   - pip:
     - opencv-python==4.4.0.44
+    - pi==0.1.2
+    - pip==20.3.1
+    - python-mnist==0.7
 prefix: /anaconda2/envs/amath
