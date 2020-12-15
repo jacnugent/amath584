@@ -12,4 +12,4 @@ GitHub repository for the coding portion of homework assignments for AMATH 584: 
 
 * **Homework 5** (Monday, December 7, 2020): `hw5_iterative_methods/`
 
- 
+* **Homework 6 (Midterm #2)** (Monday, December 14, 2020): `hw6_regression_and_sparsity/`
