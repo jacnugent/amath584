@@ -152,7 +152,7 @@ When all pixels are used for the matrix $\textbf{A}$, the loadings are equivalen
 The digit-by-digit analysis is much more accurate that the analysis on all digits at once because the pixels used to determine the weights are specific to each number. The small amount of pixels that the model is trained on map to characteristic features that are specific to each digit, so the models are thus able to more accurately identify these characteristics. In contrast, when the models are trained on all digits at once, the limited number of most important pixels used have to represent the key features of all 10 digits in order to properly identify them.  % figure 21
 
 \begin{table}[ht]
-\caption{Caption... (all pixels)}
+\caption{Values of the accuracy, true positive rate, and false positive rate (shown in Figure 21) for the Lasso model ($\lambda=1.0$) trained on individual digit using all pixels.}
 \label{table1}
 \begin{tabular}{|c|c|c|c|}
 \hline
@@ -175,7 +175,7 @@ The most important pixels for each digit were found using the same method as in 
 Table 2 lists the accuracies (\#correct / (\#incorrect + \#correct)), false positive rate, and true positive rate for each digit when only these most important pixels are used. Compared to using all pixels, using only the most important pixels results in comparable accuracy (Figure 23). As fewer pixels are used, the model accuracy tends to decrease. There is a slight improvement in accuracy for some digits at higher thresholds because the number of false positives decreases (Figure 23). % figure 23
 
 \begin{table}[ht]
-\caption{Caption... (91st)}
+\caption{Values of the accuracy, true positive rate, and false positive rate (shown in Figure 23, upper center panel) for the Lasso model ($\lambda=1.0$) trained on individual digit using the top 91\% of pixel weights.}
 \label{table2}
 \begin{tabular}{|c|c|c|c|}
 \hline
@@ -203,19 +203,19 @@ Digit & Accuracy (\%) & True Positive Rate (\%) & False Positive Rate (\%) \\ \h
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.75]{figures/weights_matrix_accuracy_all_digits_all_methods.png}}
-\caption{Caption....}
+\caption{(Problem 1) Image of the single weight/loading matrix $\textbf{A}$ for each method for all digits. The percentages indicate the accuracy (\# correct/\# incorrect).}
 \label{fig1}
 \end{figure}
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.5]{figures/bar_plot_loadings_all_digits_all_methods.png}}
-\caption{Caption....}
+\caption{(Problem 1) Values of the weights for each model for all digits. The percentages indicate the accuracy (\# correct/\# incorrect).}
 \label{fig2}
 \end{figure}
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.75]{figures/all_data_accuracy_comparison.png}}
-\caption{Caption....}
+\caption{(Problem 1) Accuracy of each model (\# correct/\# incorrect) for all digits using various $\textbf{AX}=\textbf{B}$ solvers.}
 \label{fig3}
 \end{figure}
 
@@ -226,7 +226,7 @@ Digit & Accuracy (\%) & True Positive Rate (\%) & False Positive Rate (\%) \\ \h
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.5]{figures/bar_plot_loadings_pinv.png}}
-\caption{Caption....}
+\caption{(Problem 2) Top: images of the weights matrix for each digit for the pseudo-inverse method using all pixels. Bottom: Values of the weights of each pixel.}
 \label{fig4b}
 \end{figure}
 
@@ -237,7 +237,7 @@ Digit & Accuracy (\%) & True Positive Rate (\%) & False Positive Rate (\%) \\ \h
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.5]{figures/bar_plot_loadings_lasso_1.png}}
-\caption{Caption....}
+\caption{(Problem 2) Top: images of the weights matrix for each digit for the Lasso method (with $\lambda=1.0$) using all pixels. Bottom: Values of the weights of each pixel.}
 \label{fig5b}
 \end{figure}
 
@@ -248,7 +248,7 @@ Digit & Accuracy (\%) & True Positive Rate (\%) & False Positive Rate (\%) \\ \h
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.5]{figures/bar_plot_loadings_lasso_05.png}}
-\caption{Caption....}
+\caption{(Problem 2) Top: images of the weights matrix for each digit for the Lasso method (with $\lambda=0.5$) using all pixels. Bottom: Values of the weights of each pixel.}
 \label{fig6b}
 \end{figure}
 
@@ -259,7 +259,7 @@ Digit & Accuracy (\%) & True Positive Rate (\%) & False Positive Rate (\%) \\ \h
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.5]{figures/bar_plot_loadings_lasso_01.png}}
-\caption{Caption....}
+\caption{(Problem 2) Top: images of the weights matrix for each digit for the Lasso method (with $\lambda=0.1$) using all pixels. Bottom: Values of the weights of each pixel.}
 \label{fig7b}
 \end{figure}
 
@@ -270,97 +270,97 @@ Digit & Accuracy (\%) & True Positive Rate (\%) & False Positive Rate (\%) \\ \h
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.5]{figures/bar_plot_loadings_ridge.png}}
-\caption{Caption....}
+\caption{(Problem 2) Top: images of the weights matrix for each digit for the Ridge method using all pixels. Bottom: Values of the weights of each pixel.}
 \label{fig8b}
 \end{figure}
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.75]{figures/weight_matrix_pinv_no_zeros.png}}
-\caption{Caption....}
+\caption{(Problem 2) The weight matrix from Figure 4 with zero elements omitted.}
 \label{fig9}
 \end{figure}
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.75]{figures/weight_matrix_lasso_1_no_zeros.png}}
-\caption{Caption....}
+\caption{(Problem 2) The weight matrix from Figure 5 with zero elements omitted.}
 \label{fig10}
 \end{figure}
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.75]{figures/weight_matrix_lasso_05_no_zeros.png}}
-\caption{Caption....}
+\caption{(Problem 2) The weight matrix from Figure 6 with zero elements omitted.}
 \label{fig11}
 \end{figure}
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.75]{figures/weight_matrix_lasso_01_no_zeros.png}}
-\caption{Caption....}
+\caption{(Problem 2) The weight matrix from Figure 7 with zero elements omitted.}
 \label{fig12}
 \end{figure}
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.75]{figures/weight_matrix_ridge_no_zeros.png}}
-\caption{Caption....}
+\caption{(Problem 2) The weight matrix from Figure 8 with zero elements omitted.}
 \label{fig13}
 \end{figure}
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.9]{figures/lasso_loading_percentiles-see_uptick_at_90.png}}
-\caption{Caption....}
+\caption{(Problem 2) Percentiles of the absolute values of the weights for the Lasso ($\lambda=1.0$) matrix for all digits and all pixels.}
 \label{fig14}
 \end{figure}
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.75]{figures/weight_matrix_pinv_geq_90th_no_zeros.png}}
-\caption{Caption....}
+\caption{(Problem 3) Image of the weight matrices for each digit of the Pseudo-inverse matrix using only the top 90\% of pixel weights.}
 \label{fig15}
 \end{figure}
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.75]{figures/weight_matrix_lasso_1_geq_90th_no_zeros.png}}
-\caption{Caption....}
+\caption{(Problem 3) Image of the weight matrices for each digit of the Lasso ($\lambda=1.0$)  matrix using only the top 90\% of pixel weights.}
 \label{fig16}
 \end{figure}
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.75]{figures/weight_matrix_lasso_05_geq_90th_no_zeros.png}}
-\caption{Caption....}
+\caption{(Problem 3) Image of the weight matrices for each digit of the Lasso ($\lambda=0.5$)  matrix using only the top 90\% of pixel weights.}
 \label{fig17}
 \end{figure}
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.75]{figures/weight_matrix_lasso_01_geq_90th_no_zeros.png}}
-\caption{Caption....}
+\caption{(Problem 3) Image of the weight matrices for each digit of the Lasso ($\lambda=0.1$)  matrix using only the top 90\% of pixel weights.}
 \label{fig18}
 \end{figure}
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.75]{figures/weight_matrix_ridge_geq_90th_no_zeros.png}}
-\caption{Caption....}
+\caption{(Problem 3) Image of the weight matrices for each digit of the Ridge matrix using only the top 90\% of pixel weights.}
 \label{fig19}
 \end{figure}
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.6]{figures/most_important_pixels_90th_accuracy.png}}
-\caption{Caption....}
+\caption{(Problem 3) Left: accuracy for each model using on the top 90\% of pixel weights. Right: accuracy for the Lasso model ($\lambda=1.0$) using various percentiles as cutoffs for the most significant pixel weights.}
 \label{fig20}
 \end{figure}
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.85]{figures/DIGIT_ALL_PIXELS_lasso_accuracy_comparison.png}}
-\caption{Caption....}
+\caption{(Problem 4) Accuracy, true positive rate, and false positive rate of the Lasso model ($\lambda=1.0$) trained on individual digits using all pixels.}
 \label{fig21}
 \end{figure}
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.9]{figures/DIGIT_lasso_loading_percentiles-see_uptick_at_91.png}}
-\caption{Caption....}
+\caption{(Problem 4) Percentiles of the absolute values of the weights for the Lasso ($\lambda=1.0$) matrix trained on each digit.}
 \label{fig22}
 \end{figure}
 
 \begin{figure}[ht]
 \centerline{\includegraphics[scale=0.5]{figures/DIGIT_PCTS_lasso_accuracy_comparison.png}}
-\caption{Caption....}
+\caption{(Problem 4) Accuracy of the Lasso model ($\lambda=1.0$) trained on individual digits using only the top 91\% of pixel weights.}
 \label{fig23}
 \end{figure}
 
