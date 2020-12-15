@@ -1,4 +1,4 @@
-## Homework 5
+## Homework 6 (Midterm #2)
 
 #### FILES:
 * `hw6_midterm2.py`: Python script used to complete the programming parts of homework 6.
