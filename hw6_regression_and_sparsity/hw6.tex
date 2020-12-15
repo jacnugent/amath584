@@ -86,24 +86,22 @@ Please note that the \texttt{python-mnist} package (see here: \url{ptps://pypi.o
 
 A total of five different solvers were used:
 \begin{enumerate}
-\item Moore-Penrose Pseudo-inverse (\texttt{np.linalg.pinv})
-\item Lasso with $\lambda=1.0$ (\texttt{sklearn.linear\_model.Lasso})
-\item Lasso with $\lambda=0.5$ (\texttt{sklearn.linear\_model.Lasso(alpha=0.5)})
-\item Lasso with $\lambda=0.1$ (\texttt{sklearn.linear\_model.Lasso(alpha=0.1)})
-\item Ridge (\texttt{sklearn.linear\_model.Ridge})
+\item Moore-Penrose Pseudo-inverse (\texttt{np.linalg.pinv}), SVD-based
+\item Lasso with $\lambda=1.0$ (\texttt{sklearn.linear\_model.Lasso}), $l_1$ regularization
+\item Lasso with $\lambda=0.5$ (\texttt{sklearn.linear\_model.Lasso(alpha=0.5)}), $l_1$ regularization
+\item Lasso with $\lambda=0.1$ (\texttt{sklearn.linear\_model.Lasso(alpha=0.1)}), $l_1$ regularization
+\item Ridge (\texttt{sklearn.linear\_model.Ridge}), linear regression and $l_2$ regularization
 \end{enumerate}
 
 To use these solvers, the MNIST testing labels were first converted into vectors as described in the homework description to get the matrix $\textbf{B}$. However, $\textbf{X}$ was taken to be the matrix of images and $\textbf{A}$ was the matrix of model weights/loadings following the notation in the Neural Networks: 1-Layer Networks lecture from Friday, December 11, 2020.
 
 First, the solvers were applied using the (60,000 x 1) list of labels rather than c so that only one matrix of weights was computed. These models are then showing the most important pixels for the digits collectively, which shows the overall structure and general characteristics shared by each digit. However, when applied to the test images, the models are quite inaccurate. Plots of the matrix $\textbf{A}$ and the values of the loadings are shown in Figures 1 and 2, respectively. % figures 1-2
 
-The accuracy (number of correct identifications/total number of images) is included in the title. The Lasso and Ridge models are also much less accurate than the Pseudo-inverse. This makes sense because these models promote sparsity by including a penalty on the $l_1$ norm while the Pseudo-inverse does not; when many of the weights are set to 0, there are few pixels to work with and it is difficult for the models to identify the major features.
+The accuracy (number of correct identifications/total number of images) is included in the title. The Lasso models are also much less accurate than the Pseudo-inverse. This makes sense because these models promote sparsity by including a penalty on the $l_1$ norm while the Pseudo-inverse does not; when many of the weights are set to 0, there are few pixels to work with and it is difficult for the models to identify the major features.
 
 The accuracy of these models improve greatly once the  $\textbf{B}$ matrix is used because this results in a (10 x 784) matrix for  $\textbf{A}$. Each row contains the weightings for each pixel for that number alone, so the models are able to identify separate features characteristic of each individual digit. Figure 3 shows the accuracy of each model when the 10 different features are identified for each digit. The pseudo-inverse model is slightly more accurate at ~85\% compared to ~75-78\% for the other models, but overall they all have comparable accuracy. This means that the models are able to correctly identify the pixels the majority of the time. % figure 3
 
 Figures 4-8 show the $\textbf{A}$ matrices and the values of the loadings for each digit in each model. There is a clear structure for each digit apparent in the Lasso models, meaning that the model is identifying and weighting more heavily the pixels that show the general features of each digit. This is not the case for the pseudo-inverse and Ridge models, which both weight the pixels towards the edges more heavily. % figures 4-8
-
-{\color{red} SAY ANYTHING ELSE HERE???}
 
 
 %--------------------------------------------------------------------------
@@ -133,9 +131,7 @@ Apply your most important pixels to the test data set to see how accurate you ar
 
 Figures 15-19 show the values of the weights in the $\textbf{A}$ matrices using only the most important pixels for all digits in each model. Even with this small number of pixels, the features for each number are still identified by the Lasso model. For example, the important pixels for 8 resemble a figure 8 and the important pixels for 0 resemble a circle. % figures 15-19
 
-The accuracy of each models with only the most important pixels (90th percentile) used is shown in Figure 20 (left). The right panel of Figure 20 shows a comparison of the accuracy of the Lasso method $\lambda=1.0$ using various percentiles as thresholds for the most important pixels. Although higher thresholds use fewer pixels in the model, the accuracy decreases monotonically past the 90th percentile. % figure 20
-
-{\color{red} Do I need to say anything else?}
+The accuracy of each models with only the most important pixels (90th percentile) used is shown in Figure 20 (left). The right panel of Figure 20 shows a comparison of the accuracy of the Lasso method $\lambda=1.0$ using various percentiles as thresholds for the most important pixels. Although higher thresholds use fewer pixels in the model, the accuracy decreases monotonically past the 90th percentile as fewer pixels are used in the identification. % figure 20
 
 
 %--------------------------------------------------------------------------
@@ -151,7 +147,9 @@ Redo the analysis with each digit individually to find the most important pixels
 
 For the individual-digit analysis, the $\textbf{B}$ matrix was computed for each digit by setting all elements containing that digit to 1 and all other elements equal to 0. Based on the results from Problems 2-3, only the Lasso model with $\lambda=1.0$ will be used for the analysis of each digit for the remainder of this assignment in order to optimize sparsity and accuracy.
 
-When all pixels are used for the matrix $\textbf{A}$, the loadings are equivalent to those shown in Figure 5. However, the accuracy is quite different depending on which metric is used. Here, we consider four metrics for the accuracy: the number of correct labels (e.g. the model correctly labels an image of 1 as 1), the number of incorrect labels (e.g. the model labeled an image of some other digit as 1), the incidence of "false positives" (number of incorrect labels / number of images in the testing data), and the incidence of "true positives" (number of correct labels / total number of images of that digit in the testing data). A summary of these metrics are shown in Figure 21. Table 1 lists the accuracies (\#correct / (\#incorrect + \#correct)), false positive rate, and true positive rate for each digit. The individual-digit models correctly identify each digit almost every time, but the "false positive" rate is quite high. Thus, the overall accuracy for the individual-digit models is much less than the Lasso model as a whole because the models falsely identify too many images as each digit. % figure 21
+When all pixels are used for the matrix $\textbf{A}$, the loadings are equivalent to those shown in Figure 5. However, the accuracy is quite different depending on which metric is used. Here, we consider four metrics for the accuracy: the number of correct labels (e.g. the model correctly labels an image of 1 as 1), the number of incorrect labels (e.g. the model labeled an image of some other digit as 1), the incidence of "false positives" (number of incorrect labels / number of images in the testing data), and the incidence of "true positives" (number of correct labels / total number of images of that digit in the testing data). A summary of these metrics are shown in Figure 21. Table 1 lists the accuracies (\#correct / (\#incorrect + \#correct)), false positive rate, and true positive rate for each digit. The individual-digit models correctly identify each digit almost every time, but the "false positive" rate is quite high because the models falsely identify too many images as each digit. Still, because the analysis is repeated for each digit, the "false positives" are likely not important. The model for each digit is still able to correctly label images of that digit over 90\% of the time, so it is overall very accurate. 
+
+The digit-by-digit analysis is much more accurate that the analysis on all digits at once because the pixels used to determine the weights are specific to each number. The small amount of pixels that the model is trained on map to characteristic features that are specific to each digit, so the models are thus able to more accurately identify these characteristics. In contrast, when the models are trained on all digits at once, the limited number of most important pixels used have to represent the key features of all 10 digits in order to properly identify them.  % figure 21
 
 \begin{table}[ht]
 \caption{Caption... (all pixels)}
@@ -194,19 +192,6 @@ Digit & Accuracy (\%) & True Positive Rate (\%) & False Positive Rate (\%) \\ \h
 0     & 39.3          & 99.3                    & 15.0                     \\ \hline
 \end{tabular}
 \end{table}
-
-{\color{red} Do I need to say anything else?}
-
-%--------------------------------------------------------------------------
-\vskip 1cm
-\hrule
-{\bf Problem 5.}
-
-IMPORTANT: Think about the interpretation of what you are doing with this AX = B problem.
-
-{\bf Solution:} 
-
-{\color{red} ...Is this even a separate problem? Use this as kind of a conclusions thing?}
 
 
 %--------------------------------------------------------------------------
